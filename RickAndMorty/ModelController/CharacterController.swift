@@ -12,30 +12,35 @@ class CharacterController {
     
     static let baseURL = URL(string: "https://rickandmortyapi.com/api")
     
-    static func fetchCharacters(id: String, name: String, completion: @escaping ([Character]?) -> Void) {
+    static func fetchCharacters(by searchText: String, completion: @escaping (Character?) -> Void) {
         
         // Step 1 - Construct URL
-        guard var baseURL = baseURL else { completion(nil); return}
-        baseURL.appendPathComponent("character")
-        baseURL.appendPathComponent("id")
+        guard let baseURL = baseURL else { completion(nil); return}
+       
+        let builtURL = baseURL.appendingPathComponent("character").appendingPathComponent(searchText)
+        
+        
+        print("\nBase URL \(baseURL.absoluteURL)")
+        
+        print("\n\nBuilt URL \(builtURL.absoluteURL)")
         
         //Step 3
-        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+        URLSession.shared.dataTask(with: builtURL) { (data, _, error) in
             if let error = error {
                 print("There was an error in \(#function) ; \(error) ; \(error.localizedDescription) ")
                 completion(nil); return
             }
             guard let data = data else { completion(nil); return}
             do{
-                guard let jsonDictionaries = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String : Any]] else { completion(nil); return}
+                guard let jsonDictionaries = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any] else { completion(nil); return}
                 
                 var characters: [Character] = []
                 
-                for JSONDictionary in jsonDictionaries {
-                    guard let character = Character(dictionary: JSONDictionary) else { completion(nil); return}
+                //for JSONDictionary in jsonDictionaries {
+                    guard let character = Character(dictionary: jsonDictionaries) else { completion(nil); return}
                     characters.append(character)
-                }
-                completion(characters)
+                //}
+                completion(character)
             }catch {
                 print("There was an error in \(#function) ; \(error) ; \(error.localizedDescription) ")
                 completion(nil); return
@@ -58,6 +63,7 @@ class CharacterController {
             guard let data = data else { completion(nil); return}
             let image = UIImage(data: data)
             completion(image)
+            print(imageURLAsString)
         }.resume()
         
     }

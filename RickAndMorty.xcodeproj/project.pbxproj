@@ -13,8 +13,7 @@
 		193160EE2180FE07007FAE70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193160EC2180FE07007FAE70 /* LaunchScreen.storyboard */; };
 		193160FA218104DC007FAE70 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193160F9218104DC007FAE70 /* Character.swift */; };
 		193160FC21810C1D007FAE70 /* CharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193160FB21810C1D007FAE70 /* CharacterController.swift */; };
-		1931610121811F27007FAE70 /* CharacterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931610021811F27007FAE70 /* CharacterTableViewController.swift */; };
-		1931610321811F38007FAE70 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931610221811F38007FAE70 /* CharacterTableViewCell.swift */; };
+		195008CE21814FFD00A28383 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195008CD21814FFD00A28383 /* CharacterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +25,7 @@
 		193160EF2180FE07007FAE70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		193160F9218104DC007FAE70 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		193160FB21810C1D007FAE70 /* CharacterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterController.swift; sourceTree = "<group>"; };
-		1931610021811F27007FAE70 /* CharacterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewController.swift; sourceTree = "<group>"; };
-		1931610221811F38007FAE70 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		195008CD21814FFD00A28383 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 		193160FE21811F08007FAE70 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1931610221811F38007FAE70 /* CharacterTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,7 +113,7 @@
 		193160FF21811F0F007FAE70 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1931610021811F27007FAE70 /* CharacterTableViewController.swift */,
+				195008CD21814FFD00A28383 /* CharacterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -192,9 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				195008CE21814FFD00A28383 /* CharacterViewController.swift in Sources */,
 				193160E42180FE06007FAE70 /* AppDelegate.swift in Sources */,
-				1931610121811F27007FAE70 /* CharacterTableViewController.swift in Sources */,
-				1931610321811F38007FAE70 /* CharacterTableViewCell.swift in Sources */,
 				193160FC21810C1D007FAE70 /* CharacterController.swift in Sources */,
 				193160FA218104DC007FAE70 /* Character.swift in Sources */,
 			);
